@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package b4youeat.review;
+
+message Image {
+  int32 id = 1;
+  int32 review_id = 2;
+  string storage_path = 3;
+}
+
+message Review {
+  int32 id = 1;
+  int32 restaurant_id = 2;
+  int32 user_id = 3;
+  string content = 4;
+  int32 rating = 5;
+  google.protobuf.Timestamp visit_date = 6;
+  repeated Image images = 7;
+}

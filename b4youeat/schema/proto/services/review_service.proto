@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+import "proto/data/review.proto";
+
+package b4youeat;
+
+service ReviewService {
+  rpc CreateReview(CreateReviewRequest) returns (CreateReviewResponse);
+  rpc GetReview(GetReviewRequest) returns (GetReviewResponse);
+}
+
+
+message GetReviewRequest {
+  int32 id = 1;
+}
+
+message GetReviewResponse{
+  b4youeat.review.Review review = 1;
+}
+
+message CreateReviewRequest {
+  int32 restaurant_id = 1;
+  int32 user_id = 2;
+  string content = 3;
+  int32 rating = 4;
+}
+
+message CreateReviewResponse {
+  b4youeat.review.Review review = 1;
+}
+

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package b4youeat.user;
+
+message User {
+  int32 id = 1;
+  string email = 2;
+  string name  = 3;
+}

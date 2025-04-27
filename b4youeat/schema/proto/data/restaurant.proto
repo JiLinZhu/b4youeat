@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package b4youeat.restaurant;
+
+message Restaurant {
+  int32 id = 1;
+  string name = 2;
+}
