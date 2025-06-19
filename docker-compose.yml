@@ -9,6 +9,8 @@ services:
       POSTGRES_DB: app
     ports:
       - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
 
   server:
     build: .
@@ -19,3 +21,6 @@ services:
       - db
     ports:
       - "50051:50051"
+
+volumes:
+  pgdata:

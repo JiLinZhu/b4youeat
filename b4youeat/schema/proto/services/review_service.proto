@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "google/protobuf/timestamp.proto";
 import "proto/data/review.proto";
 
 package b4youeat;
@@ -21,8 +22,9 @@ message GetReviewResponse{
 message CreateReviewRequest {
   int32 restaurant_id = 1;
   int32 user_id = 2;
-  string content = 3;
-  int32 rating = 4;
+  google.protobuf.Timestamp visit_date = 3;
+  string content = 4;
+  int32 rating = 5;
 }
 
 message CreateReviewResponse {
